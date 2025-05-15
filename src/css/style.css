@@ -1,3 +1,32 @@
-body {
-    color: #999;
+.main {
+
+}
+
+
+.board {
+  display: flex;
+  background-color: lightgrey;
+  width: 20rem;
+  height: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+  flex-wrap: wrap;
+  border: solid black;
+}
+
+
+.items {
+    box-sizing: border-box;
+    border: solid black;
+    padding: 1px;
+    background-color: aqua;
+    width: 25%;
+    height: 25%;
+}
+
+.active-item {
+  background-color: #ffffff;
+  background-image: url("/src/img/img.png");
+  background-size: cover;
 }
