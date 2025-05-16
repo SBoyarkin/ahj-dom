@@ -9,14 +9,6 @@ class Item {
     newItem.classList.add("items");
     newItem.dataset.id = this.board.children.length + 1;
     this.board.append(newItem);
-    newItem.addEventListener("click", (event) => {
-      if (event.target.classList.contains("active-item")) {
-        const active = document.querySelector(".active-item");
-        if (active) {
-          active.classList.remove("active-item");
-        }
-      }
-    });
   }
 
   createActiveItem() {
@@ -43,12 +35,16 @@ class Item {
 }
 
 const mb = document.querySelector(".board");
+mb.addEventListener("click", (event) => {
+  if (event.target.classList.contains("active-item")) {
+    event.target.classList.remove("active-item");
+  }
+});
 const item = new Item(mb);
 
 while (mb.children.length < 16) {
   item.createItem();
 }
-
 
 class Counter {
   constructor(initialCount, gameOverCount) {
@@ -56,7 +52,6 @@ class Counter {
     this.gameOverCount = gameOverCount;
   }
 }
-
 
 setInterval(() => {
   item.createActiveItem();
