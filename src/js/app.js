@@ -49,6 +49,15 @@ while (mb.children.length < 16) {
   item.createItem();
 }
 
+
+class Counter {
+  constructor(initialCount, gameOverCount) {
+    this.initialCount = initialCount;
+    this.gameOverCount = gameOverCount;
+  }
+}
+
+
 setInterval(() => {
   item.createActiveItem();
-}, 2000);
+}, 1000);
